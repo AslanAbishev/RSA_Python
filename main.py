@@ -4,7 +4,7 @@ import math
 def generate_primes():
     primes = set()
 
-    # Method to fill the primes set using Sieve of Eratosthenes
+
     sieve = [True] * 250
     sieve[0] = False
     sieve[1] = False
@@ -12,12 +12,12 @@ def generate_primes():
         for j in range(i * 2, 250, i):
             sieve[j] = False
 
-    # Filling the prime numbers
+
     for i in range(len(sieve)):
         if sieve[i]:
             primes.add(i)
 
-    # Pick two distinct random primes p and q
+
     p = random.choice(list(primes))
     primes.remove(p)
     q = random.choice(list(primes))
@@ -37,7 +37,7 @@ def setkeys():
             break
         e += 1
 
-    # d = (k*Φ(n) + 1) / e for some integer k
+
     public_key = e
 
     d = 2
@@ -67,7 +67,7 @@ def decrypt(encrypted_text):
 if __name__ == '__main__':
     setkeys()
 
-    # Take user input for the message
+
     message = input("Enter the message: ")
 
     # Encrypt the message
